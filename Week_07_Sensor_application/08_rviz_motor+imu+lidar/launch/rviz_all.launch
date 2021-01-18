@@ -1,0 +1,30 @@
+<launch>
+    <!-- load urdf -->
+    <param name="robot_description" textfile="$(find rviz_all)/urdf/xycar_3d.urdf" />
+    <param name="use_gui" value="true" />
+    
+    <!-- save rviz -->
+    <node name="rviz_visualizer" pkg="rviz" type="rviz" required="true" args="-d $(find rviz_all)/rviz/rviz_all.rviz" />
+    
+    <!-- load dependence -->
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher"/>
+
+
+    <!-- rosbag topic publish -->
+    <node name="rosbag_play" pkg="rosbag" type="play" output="screen" required="true" args="$(find rviz_all)/src/lidar_topic.bag"/>
+
+    <!-- lidar topic -->
+    <node name="lidar" pkg="rviz_all" type="lidar_urdf.py" />
+
+    <!-- odometry topic -->
+    <node name="driver" pkg="rviz_all" type="odom_8_drive.py" /> 
+    <node name="motor" pkg="rviz_all" type="converter.py" />
+
+    <!-- imu topic -->
+    <node name="imu" pkg="rviz_all" type="imu_generator.py" />
+
+
+    <node name="odom" pkg="rviz_all" type="odom_imu.py" />
+
+
+</launch>

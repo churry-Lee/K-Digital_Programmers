@@ -1,0 +1,6 @@
+<launch>
+    <!-- motor node -->
+    <include file="$(find xycar_motor)/launch/xycar_motor_a2.launch" />
+    <!-- 8 drive -->
+    <node name="auto_driver" pkg="my_motor" type="8_drive.py" />
+</launch>

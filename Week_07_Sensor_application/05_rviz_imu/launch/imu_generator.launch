@@ -1,0 +1,4 @@
+<launch>
+    <node name="rviz_visualizer" pkg="rviz" type="rviz" required="true" args="-d $(find rviz_imu)/rviz/imu_generator.rviz"/>
+    <node name="imu_generator" pkg="rviz_imu" type="imu_generator.py" />
+</launch>
