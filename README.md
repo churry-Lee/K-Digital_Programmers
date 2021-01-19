@@ -10,3 +10,4 @@
 - [5주차 - 2020.12.25 ~ 2021.01.01 - 방학]
 - [6주차 - 2021.01.04 ~ 2021.01.08 - ROS RIVZ 활용(1)](https://github.com/churry75/K-Digital_Programmers/tree/main/Week_06_Autonomous-Driving)
 - [7주차 - 2021.01.11 ~ 2021.01.15 - ROS RIVZ 활용(2)](https://github.com/churry75/K-Digital_Programmers/tree/main/Week_07_Sensor_application)
+- [8주차 - 2021.01.18 ~ 2021.01.22 - OpenCV](https://github.com/churry75/K-Digital_Programmers/tree/main/Week_08_OpenCV)
