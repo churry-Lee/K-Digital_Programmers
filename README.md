@@ -14,5 +14,5 @@
 - [07주차 - 2021.01.11 ~ 2021.01.15 - ROS RIVZ 활용(2)](https://github.com/churry75/K-Digital_Programmers/tree/main/Week_07_Sensor_application)
 - [08주차 - 2021.01.18 ~ 2021.01.22 - OpenCV](https://github.com/churry75/K-Digital_Programmers/tree/main/Week_08_OpenCV)
 - [09주차 - 2021.01.25 ~ 2021.01.29 - OpenCV(2)](https://github.com/churry75/K-Digital_Programmers/tree/main/Week_09_OpenCV(2))
-- [10주차 - 2021.02.01 ~ 2021.02.05 - Vehicle Dynamics](https://github.com/churry75/K-Digital_Programmers/tree/main/Week_10_Vehicle_Dynamics)
+- [10주차 - 2021.02.01 ~ 2021.02.05 - Tracking+Planning_Algorithms](https://github.com/churry75/K-Digital_Programmers/tree/main/Week_10_Tracking%2BPlanning_Algorithms)
 - [11주차 - 2021.02.08 ~ 2021.02.12 - 설 연휴 휴강]
