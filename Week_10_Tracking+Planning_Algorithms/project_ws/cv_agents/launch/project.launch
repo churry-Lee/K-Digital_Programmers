@@ -1,5 +1,5 @@
 <launch>
-	<node type="rviz" name="rviz" pkg="rviz" args="-d $(find cv_agents)/rviz/taxi.rviz" />
+	<node type="rviz" name="rviz" pkg="rviz" args="-d $(find cv_agents)/rviz/project.rviz" />
   	<node name="map_server" pkg="map_server" type="map_visualizer.py" output="screen" />
 	<node name="parking" pkg="obstacles" type="parking_car.py" output="screen" />
 	<node name="collision_check" pkg="obstacles" type="collision_check_with_visualizing_car.py" output="screen" />
