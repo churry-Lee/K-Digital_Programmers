@@ -1,0 +1,7 @@
+<launch>
+	<node type="rviz" name="rviz" pkg="rviz" args="-d $(find map_server)/rviz/rviz.config.rviz" />
+  	<node name="map_server" pkg="map_server" type="map_visualizer.py" output="screen" />
+	<node name="parking" pkg="obstacles" type="parking_car.py" output="screen" />
+	<node name="collision_check" pkg="obstacles" type="collision_check_with_visualizing_car.py" output="screen" />
+	<node name="spawn_agent" pkg="cv_agents" type="spawn_agent.py" output="screen" />
+</launch>
