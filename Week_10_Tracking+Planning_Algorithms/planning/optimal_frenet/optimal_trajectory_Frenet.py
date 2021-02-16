@@ -559,7 +559,7 @@ def test():
 
             # plot obstacle
             for ob in obs_global:
-                plt.plot(ob[0], ob[1], "s", color="crimson", MarkerSize=15, alpha=0.6)
+                plt.plot(ob[0], ob[1], "s", color="crimson", markersize=15, alpha=0.6)
 
             for i in range(len(path)):
                     plt.plot(path[i].x, path[i].y, "-", color="crimson", linewidth=1.5, alpha=0.6)
