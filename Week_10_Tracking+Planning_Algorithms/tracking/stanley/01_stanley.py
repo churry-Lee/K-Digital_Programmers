@@ -77,6 +77,7 @@ def stanley_control(x, y, yaw, v, map_xs, map_ys, map_yaws):
 
     # steering
     steer = yaw_term + cte_term
+    print(steer)
     return steer
 
 
