@@ -80,7 +80,7 @@ if __name__ == '__main__':
             
             action = agent.get_action(state)  # get_action 함수를 통해 행동 결정
             # 환경내에서 행동을 취하고 다음 상태, 보상, 게임 종료 정보 취득
-            next_state, reward, don, _ = env.step(action)
+            next_state, reward, done, _ = env.step(action)
 
             next_state = str(next_state)  # dictionary의 key로 사용하기 위해 str 타입으로 변환
             episode_rewards += reward     # 매 스텝의 보상을 episode_rewards에 더해줌
@@ -102,7 +102,7 @@ if __name__ == '__main__':
         episode += 1
         # 진행 상황 출력
         if episode != 0 and episode % print_episode == 0:
-            print("Step: {} / Episode: {} / Epsilon: {:.3f} / Mean Rewards: {:3.f}".format(step, episode, agent.epsilon, np.mean(reward_list)))
+            print("Step: {} / Episode: {} / Epsilon: {:.3f} / Mean Rewards: {:.3f}".format(step, episode, agent.epsilon, np.mean(reward_list)))
             reward_list = []
 
     env.close()
