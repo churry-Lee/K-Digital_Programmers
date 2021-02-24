@@ -16,3 +16,5 @@
 - [09주차 - 2021.01.25 ~ 2021.01.29 - OpenCV(2)](https://github.com/churry75/K-Digital_Programmers/tree/main/Week_09_OpenCV(2))
 - [10주차 - 2021.02.01 ~ 2021.02.05 - Tracking+Planning_Algorithms](https://github.com/churry75/K-Digital_Programmers/tree/main/Week_10_Tracking%2BPlanning_Algorithms)
 - [11주차 - 2021.02.08 ~ 2021.02.12 - 설 연휴 휴강]
+- [12주차 - 2021.02.15 ~ 2021.02.19 - QR code & AR tag](https://github.com/churry75/K-Digital_Programmers/tree/main/Week_12_QR%20%26%20AR%20tag)
+- [13주차 - 2021.02.22 ~ 2021.02.26 - Deep Q Network](https://github.com/churry75/K-Digital_Programmers/tree/main/Week_13_DQN)

@@ -31,6 +31,22 @@ def callback(msg):
         arData["AW"] = i.pose.pose.orientation.w
 
 
+def back_drive(angle, cnt):
+    global xycar_msg, motor_pub
+
+    speed = -10
+
+    for i in range(cnt):
+        xycar_msg.data = [angle, speed]
+        motor_pub.publish(xycar_msg)
+        time.sleep(0.1)
+
+    for j in range(cnt/2):
+        xycar_msg.data = [-angle, speed]
+        motor_pub.publish(xycar_msg)
+        time.sleep(0.1)
+
+
 def motor_control(dx, dy, yaw, distance):
     global xycar_msg, speed
 
@@ -60,7 +76,13 @@ def motor_control(dx, dy, yaw, distance):
             angle = -yaw
 
     if distance <= 72:
-        speed = 0
+
+        if dx > 11 or math.degrees(yaw) > 10:
+            back_drive(-50, 20)
+        elif dx < -11 or math.degrees(yaw) < -10:
+            back_drive(50, 20)
+        else:
+            speed = 0
     else:
         speed = 20
 
@@ -70,7 +92,7 @@ def motor_control(dx, dy, yaw, distance):
 
 
 def start():
-    global xycar_msg
+    global xycar_msg, motor_pub
 
     rospy.init_node('ar_drive_info')
     rospy.Subscriber('ar_pose_marker', AlvarMarkers, callback)
