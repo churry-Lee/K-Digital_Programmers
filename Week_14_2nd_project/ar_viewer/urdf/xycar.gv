@@ -1,0 +1,35 @@
+digraph G {
+node [shape=box];
+"base_link" [label="base_link"];
+"baseplate" [label="baseplate"];
+"front_mount" [label="front_mount"];
+"front_shaft" [label="front_shaft"];
+"front_left_hinge" [label="front_left_hinge"];
+"front_left_wheel" [label="front_left_wheel"];
+"front_right_hinge" [label="front_right_hinge"];
+"front_right_wheel" [label="front_right_wheel"];
+"rear_shaft" [label="rear_shaft"];
+"rear_left_wheel" [label="rear_left_wheel"];
+"rear_right_wheel" [label="rear_right_wheel"];
+node [shape=ellipse, color=blue, fontcolor=blue];
+"base_link" -> "base_link_to_baseplate" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"base_link_to_baseplate" -> "baseplate"
+"baseplate" -> "baseplate_to_front_mount" [label="xyz: 0.105 0 -0.059 \nrpy: 0 -0 0"]
+"baseplate_to_front_mount" -> "front_mount"
+"front_mount" -> "front_mount_to_front_shaft" [label="xyz: 0.105 0 -0.059 \nrpy: 0 -0 0"]
+"front_mount_to_front_shaft" -> "front_shaft"
+"front_shaft" -> "front_left_hinge_joint" [label="xyz: 0 0.1425 0 \nrpy: 0 -0 0"]
+"front_left_hinge_joint" -> "front_left_hinge"
+"front_left_hinge" -> "front_left_wheel_joint" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"front_left_wheel_joint" -> "front_left_wheel"
+"front_shaft" -> "front_right_hinge_joint" [label="xyz: 0 -0.1425 0 \nrpy: 0 -0 0"]
+"front_right_hinge_joint" -> "front_right_hinge"
+"front_right_hinge" -> "front_right_wheel_joint" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"front_right_wheel_joint" -> "front_right_wheel"
+"front_mount" -> "rear_mount_to_rear_shaft" [label="xyz: -0.305 0 -0.059 \nrpy: 0 -0 0"]
+"rear_mount_to_rear_shaft" -> "rear_shaft"
+"rear_shaft" -> "rear_left_wheel_joint" [label="xyz: 0 0.14 0 \nrpy: 0 -0 0"]
+"rear_left_wheel_joint" -> "rear_left_wheel"
+"rear_shaft" -> "rear_right_wheel_joint" [label="xyz: 0 -0.14 0 \nrpy: 0 -0 0"]
+"rear_right_wheel_joint" -> "rear_right_wheel"
+}
