@@ -229,9 +229,9 @@ def start():
                                                       arData["AZ"], arData["AW"]))
 
             path_x, path_y, path_yaw, target_idx = path_planning(arData["DX"],
-                                                                 arData["DY"], yaw)
+                                                                 arData["DZ"], yaw)
             print(" DX: {}, DY: {}, Yaw: {}".format(round(arData["DX"], 0),
-                                                    round(arData["DY"], 0),
+                                                    round(arData["DZ"], 0),
                                                     round(yaw, 5)))
             #plt.plot(path_x, path_y)
             #plt.show()
