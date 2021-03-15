@@ -9,7 +9,7 @@ from ar_track_alvar_msgs.msg import AlvarMarkers
 # Quaternion 값을 euler 값으로 변환
 from tf.transformations import euler_from_quaternion
 # 자동차 구동제어 토픽 메세지
-from std_msgs.msg import Int32MultiArray
+from xycar_motor.msg import xycar_motor
 
 # arData 값 초기화
 arData = {"DX":0.0, "DY":0.0, "DZ":0.0, "AX":0.0, "AY":0.0, "AZ":0.0, "AW":0.0}
@@ -37,12 +37,14 @@ def back_drive(angle, cnt):
     speed = -10
 
     for i in range(cnt):
-        xycar_msg.data = [angle, speed]
+        xycar_msg.angle = angle
+        xycar_msg.speed = speed
         motor_pub.publish(xycar_msg)
         time.sleep(0.1)
 
     for j in range(cnt/2):
-        xycar_msg.data = [-angle, speed]
+        xycar_msg.data = -angle
+        xycar_msg.speed = speed
         motor_pub.publish(xycar_msg)
         time.sleep(0.1)
 
@@ -86,7 +88,7 @@ def motor_control(dx, dy, yaw, distance):
         speed = 20
 
     angle = int(math.degrees(angle))
-    
+
     return angle, speed
 
 
@@ -95,8 +97,8 @@ def start():
 
     rospy.init_node('ar_drive_info')
     rospy.Subscriber('ar_pose_marker', AlvarMarkers, callback)
-    motor_pub = rospy.Publisher('xycar_motor_msg', Int32MultiArray, queue_size =1 )
-    xycar_msg = Int32MultiArray()
+    motor_pub = rospy.Publisher('xycar_motor', xycar_motor, queue_size =1 )
+    xycar_msg = xycar_motor()
 
     while not rospy.is_shutdown():
         # AR tag의 위치/자세 정보Quaternion 값을 euler 값으로 변환
@@ -134,7 +136,7 @@ def start():
 
         # x, y 좌표를 가지고 AR tag까지의 거리 계산(피타고라스)
         distance = math.sqrt(math.pow(arData["DX"], 2) + math.pow(arData["DY"], 2))
-        
+
         dist = "{} Pixel".format(int(distance))
         cv2.putText(img, dist, (350, 25), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255))
 
@@ -144,10 +146,11 @@ def start():
 
         cv2.imshow('AR tag Position', img)
         cv2.waitKey(1)
-        
+
         delta, v = motor_control(arData["DX"], arData["DY"], yaw, distance)
-        
-        xycar_msg.data = [delta, v]
+
+        xycar_msg.angle = delta
+        xycar_msg.speed = v
         motor_pub.publish(xycar_msg)
 
     cv2.destroyAllWindows()
