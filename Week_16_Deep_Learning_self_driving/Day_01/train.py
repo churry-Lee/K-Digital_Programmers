@@ -29,7 +29,7 @@ for csv_file in csv_files:
     for row in reader:
         csv_data.append((csv_file[:-4], row[1], row[2]))
 
-batch_size = 5
+batch_size = 100
 
 x_batch = []
 y_batch = []

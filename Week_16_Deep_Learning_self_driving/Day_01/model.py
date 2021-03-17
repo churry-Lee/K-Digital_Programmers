@@ -37,10 +37,6 @@ class end2end(nn.Module):
             fc4
         )
         
-        #if use_cuda:
-        #    self.conv_module = self.conv_module.cuda()
-        #    self.fc_module = self.fc_module.cuda()
-        
     def forward(self, x):
         x = self.conv_module(x)
         x = torch.flatten(x, start_dim=1)
