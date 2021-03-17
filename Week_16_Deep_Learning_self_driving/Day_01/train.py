@@ -34,7 +34,7 @@ batch_size = 100
 x_batch = []
 y_batch = []
 
-epochs = 100
+epochs = 200
 epoch = 0
 cnt = 1
 
@@ -66,7 +66,7 @@ while (epoch < epochs):
         img = img.transpose((2, 0, 1)) / 255.0
         img = x_batch.append(img.tolist())
         label = y_batch.append([float(ccss[2])])
-        
+
         cnt += 1
         time.sleep(0.02)
 

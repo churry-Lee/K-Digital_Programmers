@@ -21,9 +21,9 @@ def study_model_load(episode, batch_cnt, model, device):
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 net = end2end().to(device)
-study_model_load(1, 46, net, device)
+study_model_load(14, 60, net, device)
 
-input_file = "0x7f2e60b6fc90.mkv"
+input_file = "0x7fb235cd69f0.mkv"
 
 cap = cv2.VideoCapture(input_file)
 
