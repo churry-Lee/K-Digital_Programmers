@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 
 import torch
 import torch.nn as nn
@@ -37,7 +37,6 @@ class end2end(nn.Module):
             fc4
         )
         
-        # gpu로 할당
         #if use_cuda:
         #    self.conv_module = self.conv_module.cuda()
         #    self.fc_module = self.fc_module.cuda()

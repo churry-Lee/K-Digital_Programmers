@@ -1,18 +1,18 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
 import torch
 import torch.nn as nn
 import torch.optim as optim
 
-import glob, csv, random, time, os, io, dill
+import cv2, glob, csv, random, time, os, io, dill
 from PIL import Image
 import numpy as np
 
 from model import end2end
 
 def study_model_load(episode, batch_cnt, model, device):
-    LoadPath_main = os.getcwd() + "/save/main_model_" + str(episode).zfill(6) + "_" + str(batch_cnt).zfill(6) + "pth"
+    LoadPath_main = os.getcwd() + "/save/main_model_" + str(episode).zfill(6) + "_" + str(batch_cnt).zfill(6) + ".pth"
     with open(LoadPath_main, 'rb') as f:
         LoadBuffr = io.BytesIO(f.read())
     model.load_state_dict(torch.load(LoadBuffr, map_location=device))
@@ -21,9 +21,9 @@ def study_model_load(episode, batch_cnt, model, device):
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 net = end2end().to(device)
-study_model_load(episode, batch_cnt, net, device)
+study_model_load(1, 46, net, device)
 
-input_file = ""
+input_file = "0x7f2e60b6fc90.mkv"
 
 cap = cv2.VideoCapture(input_file)
 
