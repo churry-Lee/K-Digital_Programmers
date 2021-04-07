@@ -19,4 +19,4 @@
 - [12주차 - 2021.02.15 ~ 2021.02.19 - QR code & AR tag](https://github.com/churry75/K-Digital_Programmers/tree/main/Week_12_QR%20%26%20AR%20tag)
 - [13주차 - 2021.02.22 ~ 2021.02.26 - Deep Q Network](https://github.com/churry75/K-Digital_Programmers/tree/main/Week_13_DQN)
 - [14 ~ 16주차 - 2021.03.02 ~ 2021.03.19 - Docker & CARLA simulator & End2End learning]
-- [17 ~ 18주차 - 2021.03.22 ~ 2021.04.02 - Final Project]
+- [17 ~ 18주차 - 2021.03.22 ~ 2021.04.02 - Final Project](https://github.com/churry75/K-Digital_Programmers/tree/main/Week_17_Final_Project)
